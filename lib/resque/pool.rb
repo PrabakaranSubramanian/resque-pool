@@ -129,8 +129,8 @@ module Resque
     def load_config
       #@config = config_loader.call(environment)
       @config = nil
-      #@config = config_loader.call(environment)
-      @config = config_loader
+      @config = config_loader.call(environment)
+      #@config = config_loader
       puts "#{@config}"
       @config
     end
