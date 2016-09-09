@@ -304,7 +304,9 @@ module Resque
 
     def join
       loop do
+        GC.start
         reap_all_workers
+        sleep 300
         break if handle_sig_queue! == :break
         if sig_queue.empty?
           master_sleep
