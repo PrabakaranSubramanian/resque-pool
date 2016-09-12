@@ -306,7 +306,7 @@ module Resque
       loop do
         GC.start
         reap_all_workers
-        sleep 60
+        #sleep 60
         break if handle_sig_queue! == :break
         if sig_queue.empty?
           master_sleep
